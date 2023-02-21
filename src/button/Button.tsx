@@ -12,7 +12,7 @@ export default defineComponent({
       rounded-lg 
       shadow-md 
       text-white 
-      bg-green-500 
+      bg-blue-500 
       hover:bg-green-700 
       border-none 
       cursor-pointer 
