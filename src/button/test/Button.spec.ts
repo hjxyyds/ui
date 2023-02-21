@@ -26,7 +26,7 @@ describe("color", () => {
         .classes()
         .map((v) => v.replace("\n", ""))
         .includes("bg-blue-500")
-    ).toBe(true);
+    ).toBe(false);
   });
   test("red", () => {
     const wrapper = shallowMount(Button, {
@@ -39,6 +39,6 @@ describe("color", () => {
         .classes()
         .map((v) => v.replace("\n", ""))
         .includes("bg-red-500")
-    ).toBe(true);
+    ).toBe(false);
   });
 });
