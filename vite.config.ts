@@ -1,9 +1,9 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { presetUno, presetAttributify, presetIcons } from "unocss";
 import Unocss from "unocss/vite";
-
 // https://vitejs.dev/config/
 const rollupOptions = {
   external: ["vue", "vue-router"],
@@ -14,6 +14,13 @@ const rollupOptions = {
   },
 };
 export default defineConfig({
+  test: {
+    globals: true,
+    environment: "happy-dom",
+    transformMode: {
+      web: [/.[tj]sx$/],
+    },
+  },
   plugins: [
     vue(),
     vueJsx({
@@ -23,6 +30,7 @@ export default defineConfig({
       presets: [presetUno(), presetAttributify(), presetIcons()],
     }),
   ],
+
   build: {
     rollupOptions,
     minify: true,
